@@ -29,9 +29,10 @@ class Post extends Component {
           <div className="darken-header-image"></div>
           <div className="header-text">
             <h1>{post.title}</h1>
-            <h3>{post.subtitle}</h3>
-            <ScrollDownArrow name="content" />
+            <p>{post.subtitle}</p>
+            <p>{post.readingTime.text}</p>
           </div>
+          <ScrollDownArrow name="main" />
         </div>
         <ProgressBar />
         <div id="main" className="main">

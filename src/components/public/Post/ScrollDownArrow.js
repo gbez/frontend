@@ -15,9 +15,9 @@ class ScrollDownArrow extends Component {
   render() {
     return (
       <div className="icon-scroll">
-        <a onClick={this.handleClick}>
+        <button onClick={this.handleClick}>
           <FontAwesomeIcon icon="arrow-circle-down" />
-        </a>
+        </button>
       </div>
     );
   }

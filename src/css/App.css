@@ -76,6 +76,14 @@ a:hover {
   padding: 0;
 }
 
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .navbar a {
+    text-align: center;
+    font-size: 1em;
+    color: green;
+  }
+}
+
 .navbar li {
   flex-grow: 1;
 }
@@ -201,14 +209,20 @@ a:hover {
 .header h3 {
 }
 
-.header a {
+.header button {
   position: absolute;
   bottom: 0;
   font-size: 4em;
   margin-bottom: 1vh;
   transform: translateX(-50%);
   cursor: pointer;
-  color: white;
+  color: orange;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 
 .header a:hover {
