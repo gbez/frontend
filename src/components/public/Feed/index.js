@@ -10,6 +10,14 @@ import {
 } from "../../../redux/actions";
 import { getSafe, filterFeed } from "../../../functions/helpers";
 import FeedItem from "./FeedItem";
+import { css } from "@emotion/core";
+import RingLoader from "react-spinners/RingLoader";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 class Feed extends Component {
   componentDidMount() {
@@ -26,13 +34,17 @@ class Feed extends Component {
 
   render() {
     var feed = getSafe(() => this.props.feed.data.data, []);
-    return (
-      <div className="feed">
-        {feed.map((item) => {
-          return <FeedItem item={item} />;
-        })}
-      </div>
-    );
+    console.log(feed);
+    console.log(feed.length);
+    let feedDisplay;
+    if (feed.length > 0) {
+      feedDisplay = feed.map((item) => {
+        return <FeedItem item={item} />;
+      });
+    } else {
+      feedDisplay = <RingLoader css={override} color={"#ee388d"} size={100} />;
+    }
+    return <div className="feed">{feedDisplay}</div>;
   }
 }
 

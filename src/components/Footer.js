@@ -1,14 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const copyrightStyle = {
-  position: "absolute",
-  bottom: 0,
-  left: "50%",
-  padding: "20px",
-  transform: "translateX(-50%)",
-};
-
 const Footer = (props) => {
   return (
     <div className="footer">
@@ -34,7 +26,7 @@ const Footer = (props) => {
           </a>
         </li>
       </ul>
-      <p style={copyrightStyle}>
+      <p className="copyright">
         &copy; Copyright {new Date().getFullYear()}, Grant Besner
       </p>
     </div>

@@ -39,6 +39,7 @@ export const resetPage = () => {
 
 // FEED
 export const loadFeed = (queryOverride) => async (dispatch, getState) => {
+  console.log(queryOverride);
   const response = await DimSumCart.get(
     queryOverride ? queryOverride : window.location.pathname
   )
@@ -47,7 +48,7 @@ export const loadFeed = (queryOverride) => async (dispatch, getState) => {
     })
     .catch((e) => {
       console.log(e);
-      toast.error(e.response.data.message);
+      //toast.error(e.response.data.message);
     });
 };
 

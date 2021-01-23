@@ -7,8 +7,12 @@ class Public extends Component {
     const Component = this.props.component;
     return (
       <Fragment>
-        <Navbar />
-        <Component />
+        <div className="wrapper">
+          <div className="wrapper-content">
+            <Navbar />
+            <Component />
+          </div>
+        </div>
         <Footer />
       </Fragment>
     );

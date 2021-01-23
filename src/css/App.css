@@ -2,11 +2,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
   --my-font-family: "Roboto Slab", serif;
+  --footer-height: 25vh;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  :root {
+    --footer-height: 20vh;
+  }
+}
+
 html {
   /*background: linear-gradient(#a4fcd8, white) no-repeat center center fixed;*/
   background-size: cover;
   height: 100%;
+  position: relative;
+  margin: 0;
 }
 body {
   font-family: var(--my-font-family);
@@ -14,6 +25,20 @@ body {
   font-size: 20px;
   padding: 0;
   margin: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.wrapper-content {
+  padding-bottom: var(--footer-height);
 }
 
 h1 {
@@ -76,14 +101,6 @@ a:hover {
   padding: 0;
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .navbar a {
-    text-align: center;
-    font-size: 1em;
-    color: green;
-  }
-}
-
 .navbar li {
   flex-grow: 1;
 }
@@ -94,6 +111,16 @@ a:hover {
   color: black;
 }
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .navbar ul {
+    width: 75vw;
+  }
+  .navbar a {
+    font-size: 1.5em;
+  }
+}
+
 .navbar a:hover {
   color: #c0095e;
 }
@@ -102,11 +129,10 @@ a:hover {
 
 .footer {
   position: relative;
+  height: var(--footer-height);
+  margin-top: calc((-1) * var(--footer-height));
   width: 100%;
-  height: 25vh;
-  bottom: 0;
   text-align: center;
-  /*border-top: 0.01em solid black;*/
 }
 
 .footer ul {
@@ -124,6 +150,28 @@ a:hover {
 
 .footer a {
   font-size: 50px;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 1.5vh;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .footer ul {
+    align-items: center;
+    width: 100vw;
+    padding: 5px 0;
+  }
+  .footer a {
+    font-size: 40px;
+  }
+  .footer p {
+    font-size: 20px;
+  }
 }
 
 /* -------------- FEED ------------ */
@@ -165,6 +213,36 @@ a:hover {
 }
 
 .feed p {
+}
+
+@media only screen and (max-width: 768px) {
+  .feed {
+    margin: 5vh 12vw;
+  }
+
+  .feed-title-block {
+    display: block;
+    margin: 0;
+    height: max-content;
+  }
+
+  .feed img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .feed a {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .feed h1 {
+    font-size: 50px;
+  }
+
+  .feed p {
+    font-size: 20px;
+  }
 }
 
 /* -------------- POST ------------ */
@@ -216,13 +294,17 @@ a:hover {
   margin-bottom: 1vh;
   transform: translateX(-50%);
   cursor: pointer;
-  color: orange;
+  color: whitesmoke;
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   overflow: hidden;
   outline: none;
+}
+
+.header button:hover {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .header a:hover {
@@ -248,4 +330,27 @@ a:hover {
   height: 10px;
   background-color: #ee388d;
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .main {
+    margin: 0 5vw 3vh 5vw;
+  }
+
+  .main p {
+    line-height: 1.4;
+  }
+
+  .content h1 {
+    font-size: 30px;
+  }
+
+  .content h2 {
+    font-size: 25px;
+  }
+
+  .content h3 {
+    font-size: 20px;
+  }
 }

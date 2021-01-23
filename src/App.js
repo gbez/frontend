@@ -57,7 +57,15 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <ToastContainer />
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          draggable
+        />
         <Router>
           <Switch>
             <Public exact path="/" component={Home} />
