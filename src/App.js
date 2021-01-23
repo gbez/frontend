@@ -31,6 +31,9 @@ import Me from "./components/public/Me";
 
 // CSS
 import "./css/App.css";
+import "./css/static/Search.css";
+import "./css/static/Home.css";
+import "./css/static/Me.css";
 import "react-toastify/dist/ReactToastify.css";
 import { render } from "@testing-library/react";
 

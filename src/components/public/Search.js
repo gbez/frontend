@@ -3,6 +3,22 @@ import { connect } from "react-redux";
 import { loadFeed } from "../../redux/actions";
 import { getSafe, searchFeed } from "../../functions/helpers";
 import RingLoader from "react-spinners/RingLoader";
+import { css } from "@emotion/core";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
+
+function SearchResult(props) {
+  return (
+    <div className="search-result">
+      <p>{props.date}</p>
+      <h5>{props.title}</h5>
+    </div>
+  );
+}
 
 class Search extends Component {
   constructor(props) {
@@ -28,40 +44,45 @@ class Search extends Component {
     var feed = getSafe(() => this.props.feed.data.data, []);
     var results = searchFeed(feed, `${this.state.input}`);
     var tags = getSafe(() => this.props.feed.data.distinct.tag, []);
-    console.log(feed);
-    console.log(tags);
-    console.log("results" + results);
-    return (
-      <div className="search">
-        <input
-          name="input"
-          type="text"
-          value={this.state.input}
-          onChange={this.handleChange}
-        />
-        <p>
-          {results.length} result(s) found for "{this.state.input}"
-        </p>
-        {results.map((item) => {
-          return (
-            <div className="search-result-item">
-              <p>{item.readableDate}</p>
-              <p>{item.title}</p>
-            </div>
-          );
-        })}
-        <h3>Tags</h3>
-        <ul>
-          {tags.map((item) => {
-            return (
-              <li>
-                <a href={`/tag/${item}/1`}>{item}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
+    if (feed.length < 1) {
+      return <RingLoader css={override} color={"#ee388d"} size={100} />;
+    } else {
+      return (
+        <div className="search">
+          <input
+            name="input"
+            type="text"
+            placeholder="Input search"
+            value={this.state.input}
+            onChange={this.handleChange}
+          />
+          {this.state.input.length > 0 && (
+            <p className="align-center buffer">
+              {results.length} result(s) found for "{this.state.input}"
+            </p>
+          )}
+          <div className="results">
+            {results.length > 0 && <h3>Results</h3>}
+            {results.map((item) => {
+              return (
+                <SearchResult date={item.readableDate} title={item.title} />
+              );
+            })}
+          </div>
+
+          <h3>Tags</h3>
+          <ul>
+            {tags.map((item) => {
+              return (
+                <li>
+                  <a href={`/tag/${item}/1`}>{item}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
+    }
   }
 }
 const mapStateToProps = (state) => {

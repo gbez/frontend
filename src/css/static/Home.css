@@ -1,0 +1,25 @@
+.home {
+  margin: 0 5vw;
+}
+
+.home h1 {
+  text-align: center;
+}
+
+.home-item {
+  position: relative;
+  display: flex;
+  margin: 5vh 0;
+  flex-wrap: wrap;
+}
+
+.home-item img {
+  flex: 1 1 200px;
+  width: 300px;
+}
+
+.home-item p {
+  flex: 1 1 50%;
+  font-size: 15px;
+  font-weight: 200;
+}

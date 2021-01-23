@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 
-const image1 =
-  "https://upload.wikimedia.org/wikipedia/en/3/39/Avatar_world_map.jpg";
-const image2 =
-  "https://base.imgix.net/files/base/ebm/industryweek/image/2019/05/industryweek_33743_future_city_80s_style.png?auto=format&fit=crop&h=432&w=768";
 function HomeItem(props) {
   return (
     <div className="home-item">
@@ -18,12 +14,30 @@ class Home extends Component {
     return (
       <div className="home">
         <h1>This is my home</h1>
-        <img src={image1}></img>
-        <HomeItem img={image2} text="Text" />
-        <HomeItem img="" text="Text" />
-        <HomeItem img="" text="Text" />
-        <HomeItem img="" text="Text" />
-        <HomeItem img="" text="Text" />
+        <img
+          style={{ width: "100%" }}
+          src="https://d6ozfheqtj1tz.cloudfront.net/ChIJS_W93oi42YgRxKDwdPyixN8/5c382c367c0b0.jpg"
+        ></img>
+        <HomeItem
+          img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
+          text="Text"
+        />
+        <HomeItem
+          img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
+          text="Text"
+        />
+        <HomeItem
+          img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
+          text="Text"
+        />
+        <HomeItem
+          img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
+          text="Text"
+        />
+        <HomeItem
+          img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
+          text="Text"
+        />
       </div>
     );
   }
