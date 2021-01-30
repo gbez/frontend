@@ -10,11 +10,10 @@
 }
 
 .search input {
-  width: 90%;
+  width: 100%;
   height: 40px;
   font-family: var(--my-font-family);
   font-size: 20px;
-  padding: 0 10px;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
@@ -25,9 +24,16 @@
   font-weight: 300;
 }
 
+.search a {
+  color: #ee388d;
+}
+
+.search a:hover {
+  color: #c0095e;
+}
+
 .search h3 {
   text-align: center;
-  margin: 10px 20%;
   border-bottom: 1px solid black;
 }
 
@@ -57,7 +63,8 @@ select:focus {
 }
 
 .search-result {
-  margin: 40px 0;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .search-result p {
@@ -78,4 +85,20 @@ select:focus {
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
+  .search {
+    padding: 5vh 25vw;
+  }
+
+  .search ul {
+    margin: 0 5%;
+    columns: 4;
+    -webkit-columns: 4;
+    -moz-columns: 4;
+  }
+
+  .results {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
 }

@@ -14,8 +14,10 @@ const override = css`
 function SearchResult(props) {
   return (
     <div className="search-result">
-      <p>{props.date}</p>
-      <h5>{props.title}</h5>
+      <a href={props.url}>
+        <p>{props.date}</p>
+        <h5>{props.title}</h5>
+      </a>
     </div>
   );
 }
@@ -61,11 +63,15 @@ class Search extends Component {
               {results.length} result(s) found for "{this.state.input}"
             </p>
           )}
+          {results.length > 0 && <h3>Results</h3>}
           <div className="results">
-            {results.length > 0 && <h3>Results</h3>}
             {results.map((item) => {
               return (
-                <SearchResult date={item.readableDate} title={item.title} />
+                <SearchResult
+                  url={item.url}
+                  date={item.readableDate}
+                  title={item.title}
+                />
               );
             })}
           </div>

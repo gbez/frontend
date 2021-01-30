@@ -3,6 +3,8 @@
 :root {
   --my-font-family: "Roboto Slab", serif;
   --footer-height: 10px;
+  --link: #ee388d;
+  --link-hover: #c0095e;
 }
 
 @media only screen and (max-width: 768px) {
@@ -247,6 +249,14 @@ a:hover {
 
 /* -------------- POST ------------ */
 .post {
+}
+
+.post a {
+  color: var(--link);
+}
+
+.post a:hover {
+  color: var(--link-hover);
 }
 
 .header {
