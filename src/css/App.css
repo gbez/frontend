@@ -85,9 +85,13 @@ a:hover {
 #logo {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 3em;
+  transform: translateY(-40%);
   padding: 0 2.5vw;
+  width: 75px;
+}
+
+#logo img {
+  fill: #00ffff;
 }
 
 .navbar ul {
@@ -113,6 +117,10 @@ a:hover {
   color: black;
 }
 
+.navbar a:hover {
+  color: #c0095e;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .navbar ul {
@@ -121,10 +129,6 @@ a:hover {
   .navbar a {
     font-size: 1.5em;
   }
-}
-
-.navbar a:hover {
-  color: #c0095e;
 }
 
 /* -------------- FOOTER ------------ */

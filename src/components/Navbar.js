@@ -7,7 +7,7 @@ class Navbar extends Component {
       <div className="navbar">
         <nav>
           <a id="logo" href="/">
-            <FontAwesomeIcon icon={["fab", "glide-g"]} />
+            <img src="/logo.svg" />
           </a>
           <ul>
             <li>

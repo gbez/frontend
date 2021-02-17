@@ -34,10 +34,7 @@ class Home extends Component {
           img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
           text="Text"
         />
-        <HomeItem
-          img="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png"
-          text="Text"
-        />
+        <HomeItem img="/logo2.svg" text="Text" />
       </div>
     );
   }
