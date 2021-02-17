@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = (props) => {
   return (
     <div className="footer">
-      <ul>
+      {/*<ul>
         <li>
           <a href="/">
             <FontAwesomeIcon icon="envelope" />
@@ -25,9 +25,9 @@ const Footer = (props) => {
             <FontAwesomeIcon icon="share" />
           </a>
         </li>
-      </ul>
+      </ul>*/}
       <p className="copyright">
-        &copy; Copyright {new Date().getFullYear()}, Grant Besner
+        &copy; Copyright {new Date().getFullYear()}, GMB
       </p>
     </div>
   );

@@ -47,7 +47,11 @@ class Search extends Component {
     var results = searchFeed(feed, `${this.state.input}`);
     var tags = getSafe(() => this.props.feed.data.distinct.tag, []);
     if (feed.length < 1) {
-      return <RingLoader css={override} color={"#ee388d"} size={100} />;
+      return (
+        <div className="loader-container">
+          <RingLoader css={override} color={"#ee388d"} size={100} />
+        </div>
+      );
     } else {
       return (
         <div className="search">

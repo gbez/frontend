@@ -79,6 +79,10 @@ select:focus {
   font-weight: 400;
 }
 
+.loader-container {
+  margin: 25vh 25vw;
+}
+
 .buffer {
   margin-bottom: 30px;
 }

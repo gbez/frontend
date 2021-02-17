@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
   --my-font-family: "Roboto Slab", serif;
-  --footer-height: 10px;
+  --footer-height: 100px;
   --link: #ee388d;
   --link-hover: #c0095e;
 }
@@ -41,6 +41,11 @@ body {
 
 .wrapper-content {
   padding-bottom: var(--footer-height);
+}
+
+.vertical-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 h1 {
@@ -142,6 +147,7 @@ a:hover {
 }
 
 .footer ul {
+  position: relative;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: nowrap;
