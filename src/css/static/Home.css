@@ -12,23 +12,6 @@
   text-align: center;
 }
 
-.home h1 {
-  font-weight: 700;
-  font-size: 50px;
-}
-.home h2 {
-  font-weight: 600;
-  font-size: 45px;
-}
-.home h3 {
-  font-weight: 500;
-  font-size: 40px;
-}
-.home h4 {
-  font-weight: 400;
-  font-size: 35px;
-}
-
 .home a {
   text-decoration: underline;
   color: var(--link);

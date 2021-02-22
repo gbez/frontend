@@ -14,12 +14,11 @@ class Home extends Component {
     return (
       <div className="home">
         <br />
-        <br />
-        <br />
         <h1>i am grant. this is my website.</h1>
         <h2>
-          i write <a href="/category/journal/1">prose</a> and{" "}
-          <a href="/category/repository/1">code</a>.
+          i write <a href="/category/journal/1">prose</a>
+          <br></br>
+          and <a href="/category/repository/1">code</a>.
         </h2>
         <h3>
           i also play <a href="/category/auditorium/1">piano...</a>

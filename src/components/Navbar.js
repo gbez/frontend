@@ -16,11 +16,6 @@ class Navbar extends Component {
               </a>
             </li>
             <li>
-              <a href="/category/library/1">
-                <FontAwesomeIcon icon="book" />
-              </a>
-            </li>
-            <li>
               <a href="/category/repository/1">
                 <FontAwesomeIcon icon="code" />
               </a>
@@ -28,6 +23,11 @@ class Navbar extends Component {
             <li>
               <a href="/category/auditorium/1">
                 <FontAwesomeIcon icon="music" />
+              </a>
+            </li>
+            <li>
+              <a href="/category/library/1">
+                <FontAwesomeIcon icon="book" />
               </a>
             </li>
             <li>

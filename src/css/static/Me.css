@@ -8,14 +8,23 @@
 }
 
 .me {
+}
+
+.me .flex-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
 
 .me .image {
-  flex: 1 1 150px;
+  flex: 1 1 300px;
   text-align: center;
   margin: 10px;
+}
+
+.me .image img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .me .image p {
@@ -23,15 +32,10 @@
 }
 
 .me .text {
-  flex: 2 2 500px;
+  flex: 4 4 100px;
   margin: 10px;
   text-align: center;
-}
-
-.me img {
-  width: 100%;
-  min-width: 100px;
-  max-width: 300px;
+  color: blue;
 }
 
 .me .list-wrapper {
@@ -48,6 +52,10 @@
   margin: 10px;
 }
 
+.list h2 {
+  text-align: center;
+}
+
 .list ul {
   list-style-position: inside;
   list-style-type: disc;
@@ -59,4 +67,6 @@
 
 .me h2 {
   margin: 5px 0px;
+  font-size: 25px;
+  font-weight: 300;
 }

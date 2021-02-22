@@ -7,13 +7,6 @@
   --link-hover: #c0095e;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  :root {
-    --footer-height: 10vh;
-  }
-}
-
 html {
   /*background: linear-gradient(#a4fcd8, white) no-repeat center center fixed;*/
   background-size: cover;
@@ -43,19 +36,20 @@ body {
   padding-bottom: var(--footer-height);
 }
 
-.vertical-center {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 h1 {
   margin: 0;
+  font-size: 50px;
+  font-weight: 700;
 }
 
 h2 {
+  font-weight: 500;
+  font-size: 36px;
 }
 
 h3 {
+  font-size: 36px;
+  font-weight: 400;
 }
 
 p {
@@ -189,7 +183,7 @@ a:hover {
 /* -------------- FEED ------------ */
 
 .feed {
-  margin: 25vh 25vw;
+  margin: 20vh 20vw;
 }
 
 .feed-item {
@@ -197,7 +191,7 @@ a:hover {
 }
 
 .feed-title-block {
-  height: 20vh;
+  height: 15vh;
   overflow: none;
   margin-bottom: 1em;
   display: grid;
@@ -216,15 +210,8 @@ a:hover {
   position: relative;
 }
 
-.feed h1 {
-  font-size: 80px;
-}
-
 #feed-date {
   font-size: 15px;
-}
-
-.feed p {
 }
 
 @media only screen and (max-width: 768px) {
@@ -249,7 +236,8 @@ a:hover {
   }
 
   .feed h1 {
-    font-size: 50px;
+    font-size: 36px;
+    margin: 5px 0px;
   }
 
   .feed p {
@@ -335,7 +323,7 @@ a:hover {
 }
 
 .main {
-  margin: 0 25vw 5vh 25vw;
+  margin: -15vh 25vw 5vh 25vw;
 }
 
 .content {
@@ -354,8 +342,24 @@ a:hover {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  .header h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .header button {
+    bottom: 75px;
+    font-size: 3em;
+  }
+
   .main {
-    margin: 0 5vw 3vh 5vw;
+    margin: -15vh 5vw 3vh 5vw;
   }
 
   .main p {
@@ -372,5 +376,32 @@ a:hover {
 
   .content h3 {
     font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  :root {
+    --footer-height: 10vh;
+  }
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 18px;
   }
 }
