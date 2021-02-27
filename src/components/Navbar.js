@@ -7,7 +7,11 @@ class Navbar extends Component {
       <div className="navbar">
         <nav>
           <a id="logo" href="/">
-            <img alt="logo" src="/logo.svg" />
+            <img
+              alt="logo"
+              src="https://firebasestorage.googleapis.com/v0/b/besner-blog.appspot.com/o/images%2FLogo.svg?alt=media&token=af0ff0ee-8888-4e63-a5be-d5f7be9a5e75
+"
+            />
           </a>
           <ul>
             <li>
