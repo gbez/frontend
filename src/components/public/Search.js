@@ -33,7 +33,7 @@ class Search extends Component {
 
   componentDidMount() {
     //Pass "/" to query override window name in action.js
-    this.props.loadFeed("/");
+    this.props.loadFeed("/blogpost");
   }
 
   handleChange(e) {

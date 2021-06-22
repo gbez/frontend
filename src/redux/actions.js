@@ -7,6 +7,9 @@ import {
   RESET_POST,
   LOAD_FEED,
   RESET_FEED,
+  LOGIN,
+  LOGOUT,
+  RESTORE_USER,
 } from "./actionTypes";
 import DimSumCart from "../apis/DimSumCart";
 import { toast } from "react-toastify";
@@ -48,7 +51,6 @@ export const loadFeed = (queryOverride) => async (dispatch, getState) => {
     })
     .catch((e) => {
       console.log(e);
-      //toast.error(e.response.data.message);
     });
 };
 
@@ -75,5 +77,34 @@ export const loadPost = (queryOverride) => async (dispatch, getState) => {
 export const resetPost = () => {
   return {
     type: RESET_POST,
+  };
+};
+
+// AUTH
+export const restoreUser = () => async (dispatch) => {
+  const response = await DimSumCart.get("/user/whoAmI")
+    .then((response) => {
+      dispatch({ type: RESTORE_USER, payload: response });
+    })
+    .catch((e) => {
+      toast.error(e.response.data.message);
+    });
+};
+
+export const login = (loginObject) => async (dispatch) => {
+  const response = await DimSumCart.post("/user/login", loginObject)
+    .then((response) => {
+      localStorage.setItem("token", response.data.token);
+      dispatch({ type: LOGIN, payload: response.data });
+      toast.success("Log In Success");
+    })
+    .catch((e) => {
+      toast.error(e.response.data.message);
+    });
+};
+
+export const logout = () => {
+  return {
+    type: LOGOUT,
   };
 };

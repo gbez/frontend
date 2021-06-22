@@ -9,3 +9,7 @@ export const RESET_FEED = "RESET_FEED";
 
 export const INCREMENT_PAGE = "INCREMENT_PAGE";
 export const DECREMENT_PAGE = "DECREMENT_PAGE";
+
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const RESTORE_USER = "RESTORE_USER";

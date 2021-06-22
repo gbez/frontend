@@ -24,7 +24,7 @@ class Feed extends Component {
     const path = window.location.pathname;
     const pageNumber = Number(path.substring(path.lastIndexOf("/") + 1));
     this.props.setPage(pageNumber);
-    this.props.loadFeed();
+    this.props.loadFeed("/blogpost");
   }
 
   componentWillUnmount() {
@@ -34,8 +34,6 @@ class Feed extends Component {
 
   render() {
     var feed = getSafe(() => this.props.feed.data.data, []);
-    console.log(feed);
-    console.log(feed.length);
     let feedDisplay;
     if (feed.length > 0) {
       feedDisplay = feed.map((item) => {

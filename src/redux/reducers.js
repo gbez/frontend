@@ -8,6 +8,9 @@ import {
   RESET_POST,
   LOAD_FEED,
   RESET_FEED,
+  RESTORE_USER,
+  LOGIN,
+  LOGOUT,
 } from "./actionTypes";
 
 const pageReducer = (page = 0, action) => {
@@ -41,8 +44,20 @@ const feedReducer = (feed = null, action) => {
   return feed;
 };
 
+const authReducer = (user = null, action) => {
+  if (action.type === LOGIN) {
+    return action.payload;
+  } else if (action.type === RESTORE_USER) {
+    return action.payload;
+  } else if (action.type === LOGOUT) {
+    return null;
+  }
+  return user;
+};
+
 export default combineReducers({
   page: pageReducer,
   post: postReducer,
   feed: feedReducer,
+  user: authReducer,
 });
