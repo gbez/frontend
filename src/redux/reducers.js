@@ -2,6 +2,9 @@ import { combineReducers } from "redux";
 import {
   SET_PAGE,
   RESET_PAGE,
+  SET_RELATIONSHIP,
+  GET_RELATIONSHIP,
+  RESET_RELATIONSHIP,
   INCREMENT_PAGE,
   DECREMENT_PAGE,
   LOAD_POST,
@@ -25,6 +28,17 @@ const pageReducer = (page = 0, action) => {
   }
   return page;
 };
+
+const relationshipReducer = (relationship = null, action) => {
+  if(action.type === SET_RELATIONSHIP) {
+    return action.payload;
+  } else if(action.type === GET_RELATIONSHIP) {
+    return action.payload;
+  } else if (action.type === RESET_RELATIONSHIP) {
+    return null;
+  }
+  return relationship
+}
 
 const postReducer = (post = null, action) => {
   if (action.type === LOAD_POST) {
@@ -57,6 +71,7 @@ const authReducer = (user = null, action) => {
 
 export default combineReducers({
   page: pageReducer,
+  relationship: relationshipReducer,
   post: postReducer,
   feed: feedReducer,
   user: authReducer,

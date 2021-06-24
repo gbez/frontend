@@ -1,6 +1,10 @@
 export const SET_PAGE = "SET_PAGE";
 export const RESET_PAGE = "RESET_PAGE";
 
+export const SET_RELATIONSHIP = "SET_RELATIONSHIP";
+export const GET_RELATIONSHIP = "GET_RELATIONSHIP";
+export const RESET_RELATIONSHIP = "RESET_RELATIONSHIP";
+
 export const LOAD_POST = "LOAD_POST";
 export const RESET_POST = "RESET_POST";
 

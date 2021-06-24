@@ -1,6 +1,9 @@
 import {
   SET_PAGE,
   RESET_PAGE,
+  SET_RELATIONSHIP,
+  GET_RELATIONSHIP,
+  RESET_RELATIONSHIP,
   INCREMENT_PAGE,
   DECREMENT_PAGE,
   LOAD_POST,
@@ -11,7 +14,7 @@ import {
   LOGOUT,
   RESTORE_USER,
 } from "./actionTypes";
-import DimSumCart from "../apis/DimSumCart";
+import b3 from "../apis/besner-blog-backend";
 import { toast } from "react-toastify";
 
 // PAGE
@@ -40,10 +43,34 @@ export const resetPage = () => {
   };
 };
 
+//RELATIONSHIP
+export const setRelationship = (relationship) => {
+  return {
+    type: SET_RELATIONSHIP,
+    payload: relationship,
+  };
+};
+
+export const getRelationship = (relationshipID) => async (dispatch, getState) => {
+  const response = await b3.get(`/relationship/${relationshipID}`)
+    .then((response) => {
+      dispatch({ type: GET_RELATIONSHIP, payload: response.data });
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+};
+
+export const resetRelationship = () => {
+  return {
+    type: RESET_RELATIONSHIP,
+  };
+};
+
 // FEED
 export const loadFeed = (queryOverride) => async (dispatch, getState) => {
   console.log(queryOverride);
-  const response = await DimSumCart.get(
+  const response = await b3.get(
     queryOverride ? queryOverride : window.location.pathname
   )
     .then((response) => {
@@ -62,7 +89,7 @@ export const resetFeed = () => {
 
 // POST
 export const loadPost = (queryOverride) => async (dispatch, getState) => {
-  const response = await DimSumCart.get(
+  const response = await b3.get(
     queryOverride ? queryOverride : window.location.pathname
   )
     .then((response) => {
@@ -82,7 +109,7 @@ export const resetPost = () => {
 
 // AUTH
 export const restoreUser = () => async (dispatch) => {
-  const response = await DimSumCart.get("/user/whoAmI")
+  const response = await b3.get("/user/whoAmI")
     .then((response) => {
       dispatch({ type: RESTORE_USER, payload: response });
     })
@@ -92,7 +119,7 @@ export const restoreUser = () => async (dispatch) => {
 };
 
 export const login = (loginObject) => async (dispatch) => {
-  const response = await DimSumCart.post("/user/login", loginObject)
+  const response = await b3.post("/user/login", loginObject)
     .then((response) => {
       localStorage.setItem("token", response.data.token);
       dispatch({ type: LOGIN, payload: response.data });

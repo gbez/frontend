@@ -13,6 +13,11 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
+        <h1>I'm currently on a 500 mile hike.</h1>
+        <h3>Follow the Journey</h3>
+        <a href="/category/adventure/1">Click Here</a>
+      </div>
+      /*<div className="home">
         <br />
         <h1>i am grant. this is my website.</h1>
         <h2>
@@ -31,7 +36,7 @@ class Home extends Component {
             Sometimes, I go on <a href="/category/tag/adventure">adventures.</a>
           </em>
         </p>
-      </div>
+      </div>*/
     );
   }
 }
