@@ -20,7 +20,7 @@ class Footer extends Component {
 
   async handleSubmit(e){
     e.preventDefault();
-    var response = await b3.patch(`/relationship/subscribe/${this.state.input}?newsletters=testing`)
+    var response = await b3.patch(`/relationship/subscribe/${this.state.input}?newsletters=hiking,general`)
     .then((response) => {console.log(response);})
     .catch((e) => {console.log(e);});
   }

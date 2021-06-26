@@ -44,15 +44,19 @@ export const resetPage = () => {
 };
 
 //RELATIONSHIP
-export const setRelationship = (relationship) => {
-  return {
-    type: SET_RELATIONSHIP,
-    payload: relationship,
-  };
+export const setRelationship = (email, newsletters) => async (dispatch, getState) => {
+  const response = await b3.patch(`/relationship/subscribe/${email}?newsletters=${newsletters}`)
+    .then((response) => {
+      console.log(response);
+      dispatch({ type: SET_RELATIONSHIP, payload: response.data });
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 };
 
-export const getRelationship = (relationshipID) => async (dispatch, getState) => {
-  const response = await b3.get(`/relationship/${relationshipID}`)
+export const getRelationship = (query) => async (dispatch, getState) => {
+  const response = await b3.get(`/relationship?${query}`)
     .then((response) => {
       dispatch({ type: GET_RELATIONSHIP, payload: response.data });
     })
