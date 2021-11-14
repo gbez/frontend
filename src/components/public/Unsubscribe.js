@@ -4,16 +4,8 @@ import {
   setRelationship, getRelationship, resetRelationship
 } from "../../redux/actions";
 import { getSafe } from "../../functions/helpers";
+import { toast } from "react-toastify";
 import RingLoader from "react-spinners/RingLoader";
-
-/**
- * Load all distinct newsletters
- * Loop through distinct
- * Create state object of checked newsletters
- * If distinct field is included in user newsletter, checked = true
- * Change checked state on click
- * 
- */
 
 class Unsubscribe extends Component {
 
@@ -35,7 +27,8 @@ class Unsubscribe extends Component {
   handleSubscriptionUpdate(e) {
     e.preventDefault();
     var email = this.props.relationship.data[0].email;
-    this.props.setRelationship(email, this.state.newsletters.join())
+    console.log(email + " " + this.state.newsletters);
+    this.props.setRelationship(email, this.state.newsletters.join());
   }
 
   handleChange(e) {
@@ -55,7 +48,9 @@ class Unsubscribe extends Component {
   }
 
   addNewsletterItem(name) {
-    this.setState({ newsletters: [...this.state.newsletters, name] })
+    if (name.length > 0) {
+      this.setState({ newsletters: [...this.state.newsletters, name] })
+    }
   }
 
   removeNewsletterItem(name) {
@@ -88,10 +83,17 @@ class Unsubscribe extends Component {
 
   render() {
     var relationshipObject = getSafe(() => this.props.relationship, []);
-    if (relationshipObject == null) {
-      return <div>nothing</div>;
+    if (relationshipObject == null || relationshipObject.results == 0) {
+      return
+      (<div className="fillerClass">
+        <h1>Input Email</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input name="input" type="text" onChange={this.handleChange} value={this.state.input} />
+          <button type="submit">Submit here</button>
+        </form>
+      </div>
+      );
     }
-    if (relationshipObject.results == 1) {
       var relationship = relationshipObject.data[0];
       var allNewsletterItems = relationshipObject.distinct.newsletters;
       var newsletterOptions = allNewsletterItems.map((newsletter, index) =>
@@ -101,25 +103,16 @@ class Unsubscribe extends Component {
         </div>
       );
 
-      return <div className="fillerClass">
-        <h1>Relationship Exists</h1>
-        <form onSubmit={this.handleSubscriptionUpdate}>
-          {newsletterOptions}
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    } else {
       return (
         <div className="fillerClass">
-          <h1>Input Email</h1>
-          <form onSubmit={this.handleSubmit}>
-            <input name="input" type="text" onChange={this.handleChange} value={this.state.input} />
-            <button type="submit">Submit here</button>
+          <h1>Relationship Exists</h1>
+          <form onSubmit={this.handleSubscriptionUpdate}>
+            {newsletterOptions}
+            <button type="submit">Submit</button>
           </form>
-        </div>)
+        </div>
+      );
     }
-
-  }
 }
 
 const mapStateToProps = (state) => {

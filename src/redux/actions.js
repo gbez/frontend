@@ -49,6 +49,7 @@ export const setRelationship = (email, newsletters) => async (dispatch, getState
     .then((response) => {
       console.log(response);
       dispatch({ type: SET_RELATIONSHIP, payload: response.data });
+      window.location.href = "http://localhost:3001/unsubscribe";
     })
     .catch((e) => {
       console.log(e);

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from "react-toastify";
 import b3 from "../apis/besner-blog-backend";
 
 class Footer extends Component {
@@ -21,7 +22,7 @@ class Footer extends Component {
   async handleSubmit(e){
     e.preventDefault();
     var response = await b3.patch(`/relationship/subscribe/${this.state.input}?newsletters=hiking,general`)
-    .then((response) => {console.log(response);})
+    .then((response) => {toast.success("You are successfully subscribed!");this.setState({input:""})})
     .catch((e) => {console.log(e);});
   }
 
