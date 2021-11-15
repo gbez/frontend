@@ -30,12 +30,8 @@ render(){
 
  return (
     <div className="footer">
-      <h1>Follow along with the Jounrey</h1>
-      <form onSubmit={this.handleSubmit}>
-        <input name="input" onChange={this.handleChange} type="text" value={this.state.input}/>
-      <button type="submit">Submit</button>
-      </form>
-      {/*<ul>
+      {/*
+      <ul>
         <li>
           <a href="/">
             <FontAwesomeIcon icon="envelope" />
@@ -57,10 +53,10 @@ render(){
           </a>
         </li>
       </ul>
+      */}
       <p className="copyright">
         &copy; Copyright {new Date().getFullYear()}, GMB
       </p>
-      */}
     </div>
       
   );
