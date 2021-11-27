@@ -13,7 +13,6 @@ class Navbar extends Component {
 "
             />
           </a>
-          {/*
           <ul>
             <li>
               <a href="/category/journal/1">
@@ -46,7 +45,6 @@ class Navbar extends Component {
               </a>
             </li>
           </ul>
-          */}
         </nav>
       </div>
     );

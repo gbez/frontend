@@ -4,7 +4,7 @@ const FeedItem = (props) => {
   return (
     <div className="feed-item">
       <div className="feed-title-block">
-        <img src={props.item.thumbnail} alt="thumbnail" />
+        <img src={props.item.thumbnail_web} alt="thumbnail" />
         <a href={props.item.url}>
           <h1>{props.item.title}</h1>
         </a>

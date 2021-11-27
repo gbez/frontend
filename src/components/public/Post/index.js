@@ -24,7 +24,7 @@ class Post extends Component {
         <div
           id="header"
           className="header"
-          style={{ backgroundImage: `url(${post.thumbnail})` }}
+          style={{ backgroundImage: `url(${post.thumbnail_web})` }}
         >
           <div className="darken-header-image"></div>
           <div className="header-text">

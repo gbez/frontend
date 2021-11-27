@@ -94,6 +94,7 @@ export const resetFeed = () => {
 
 // POST
 export const loadPost = (queryOverride) => async (dispatch, getState) => {
+  console.log(window.location.pathname);
   const response = await b3.get(
     queryOverride ? queryOverride : `/blogpost/${window.location.pathname}`
   )

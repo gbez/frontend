@@ -1,6 +1,11 @@
 export function filterFeed(feed, filter, numItems) {
   var newFeed = feed.filter(function (item) {
+    var itemValuesByKey = item[filter.key];
+    if(typeof itemValuesByKey === 'string' || itemValuesByKey instanceof String){
+      return itemValuesByKey === filter.value;
+    } else {
     return item[filter.key].includes(filter.value);
+    }
   });
   return numItems ? newFeed.slice(0, numItems) : newFeed;
 }

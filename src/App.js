@@ -80,11 +80,9 @@ class App extends Component {
             <Public exact path="/" component={Home} />
             <Public path="/home" component={Home} />
             <Public path="/tags" component={Tags} />
-            <Public path="/categories" component={Categories} />
-            {/* 
+            <Public path="/categories" component={Categories} /> 
             <Public path="/search" component={Search} />
             <Public path="/me" component={Me} />
-            */}
             <Public exact path="/tag/:name/:page" component={Feed} />
             <Public exact path="/category/:name/:page" component={Feed} />
             <Public exact path="/:year/:month/:day/:slug" component={Post} />

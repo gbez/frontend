@@ -34,10 +34,14 @@ class Feed extends Component {
 
   render() {
     var feed = getSafe(() => this.props.feed.data.data, []);
+    const path = window.location.pathname;
+    const key = path.split("/")[1];
+    const value = path.split("/")[2];
+    feed = filterFeed(feed, {key:key,value:value});
     let feedDisplay;
     if (feed.length > 0) {
       feedDisplay = feed.map((item) => {
-        return <FeedItem item={item} />;
+        return <FeedItem key={item._id} item={item} />;
       });
     } else {
       feedDisplay = <RingLoader css={override} color={"#ee388d"} size={100} />;
